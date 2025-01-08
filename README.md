@@ -1,70 +1,50 @@
-# Getting Started with Create React App
+Overview
+This is a web-based financial data filtering application that allows users to fetch, display, and analyze Apple Inc.'s annual income statements. Users can view data in a tabular format, filter results based on specific criteria, and sort the information for better analysis.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Features
+Data Fetching and Display:
 
-## Available Scripts
+Retrieves annual income statements for Apple Inc. using the Financial Modeling Prep API.
+Displays data in a responsive table with the following columns:
+Date
+Revenue
+Net Income
+Gross Profit
+EPS (Earnings Per Share)
+Operating Income
+Filtering Options:
 
-In the project directory, you can run:
+Date Range: Filter rows between specific years (e.g., 2020–2024).
+Revenue Range: Filter rows where revenue falls within a user-defined range.
+Net Income Range: Filter rows where net income falls within a user-defined range.
+Sorting Options:
 
-### `npm start`
+Sort the table by:
+Date (ascending/descending)
+Revenue (ascending/descending)
+Net Income (ascending/descending)
+Responsive Design:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Mobile-friendly interface using TailwindCSS, ensuring usability across devices.
+Technologies Used
+Frontend:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+React (JavaScript/TypeScript) for building the user interface.
+TailwindCSS for styling and responsiveness.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+Prerequisites
+Node.js and npm installed on your machine.
+Free API key from Financial Modeling Prep.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Setup Instructions
+Clone the repository:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Navigate to the project directory:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Install dependencies: npm install
 
-### `npm run eject`
+Create a .env file in the project root and add your API key:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Start the development server : npm start
