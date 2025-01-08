@@ -26,16 +26,20 @@ const SortPanel = ({ onSort }) => {
   };
 
   return (
-    <div className="mb-4 p-4 bg-gray-100 rounded">
-      <h2 className="text-xl font-semibold mb-2">Sort By</h2>
+    <div className="bg-white shadow-md rounded-lg p-6">
+      <h2 className="text-2xl font-semibold mb-4 text-gray-800">Sort By</h2>
       <div className="flex flex-wrap gap-2">
         {['date', 'revenue', 'netIncome'].map(key => (
           <button
             key={key}
             onClick={() => handleSort(key)}
-            className={`px-3 py-1 rounded ${
-              sortStates[key] ? 'bg-blue-600 text-white' : 'bg-gray-300 text-gray-700'
-            } hover:bg-blue-500 hover:text-white transition-colors`}
+            className={`px-4 py-2 rounded-md transition-colors duration-200 ${
+              sortStates[key]
+                ? 'bg-blue-600 text-white hover:bg-blue-700'
+                : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+            } focus:outline-none focus:ring-2 focus:ring-offset-2 ${
+              sortStates[key] ? 'focus:ring-blue-500' : 'focus:ring-gray-500'
+            }`}
           >
             {getSortLabel(key)}
           </button>
@@ -46,3 +50,4 @@ const SortPanel = ({ onSort }) => {
 };
 
 export default SortPanel;
+

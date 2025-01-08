@@ -4,7 +4,6 @@ import FilterPanel from './components/FilterPanel';
 import SortPanel from './components/SortPanel';
 import { fetchFinancialData } from './api/financialApi';
 
-
 export default function App() {
   const [financialData, setFinancialData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
@@ -28,18 +27,27 @@ export default function App() {
   }, []);
 
   const handleFilterChange = (filters) => {
-    const filtered = financialData.filter(item => {
-      const itemYear = new Date(item.date).getFullYear();
-      return (
-        itemYear >= filters.startYear &&
-        itemYear <= filters.endYear &&
-        item.revenue >= filters.minRevenue &&
-        item.revenue <= filters.maxRevenue &&
-        item.netIncome >= filters.minNetIncome &&
-        item.netIncome <= filters.maxNetIncome
-      );
-    });
-    setFilteredData(filtered);
+    if (filters.startYear === 2020 &&
+        filters.endYear === new Date().getFullYear() &&
+        filters.minRevenue === 0 &&
+        filters.maxRevenue === Infinity &&
+        filters.minNetIncome === 0 &&
+        filters.maxNetIncome === Infinity) {
+      setFilteredData(financialData);
+    } else {
+      const filtered = financialData.filter(item => {
+        const itemYear = new Date(item.date).getFullYear();
+        return (
+          itemYear >= filters.startYear &&
+          itemYear <= filters.endYear &&
+          item.revenue >= filters.minRevenue &&
+          item.revenue <= filters.maxRevenue &&
+          item.netIncome >= filters.minNetIncome &&
+          item.netIncome <= filters.maxNetIncome
+        );
+      });
+      setFilteredData(filtered);
+    }
   };
 
   const handleSort = (key, direction) => {
@@ -54,15 +62,17 @@ export default function App() {
     setFilteredData(sorted);
   };
 
-  if (loading) return <div className="text-center mt-8">Loading...</div>;
-  if (error) return <div className="text-center mt-8 text-red-500">Error: {error}</div>;
+  if (loading) return <div className="flex justify-center items-center h-screen text-2xl font-semibold text-gray-700">Loading...</div>;
+  if (error) return <div className="flex justify-center items-center h-screen text-2xl font-semibold text-red-600">Error: {error}</div>;
 
   return (
-    <div className="container mx-auto p-4">
-      <h1 className="text-3xl font-bold mb-4">Apple (AAPL) Financial Data</h1>
-      <FilterPanel onFilterChange={handleFilterChange} />
-      <SortPanel onSort={handleSort} />
-      <DataTable data={filteredData} />
+    <div className="container mx-auto px-4 py-8 bg-gray-50 min-h-screen">
+      <h1 className="text-4xl font-bold mb-8 text-center text-gray-800">Apple (AAPL) Financial Data</h1>
+      <div className="space-y-6">
+        <FilterPanel onFilterChange={handleFilterChange} />
+        <SortPanel onSort={handleSort} />
+        <DataTable data={filteredData} />
+      </div>
     </div>
   );
 }
