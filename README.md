@@ -1,3 +1,7 @@
+To Open in Browser, 
+https://aaplfilter.netlify.app/
+
+
 Overview
 This is a web-based financial data filtering application that allows users to fetch, display, and analyze Apple Inc.'s annual income statements. Users can view data in a tabular format, filter results based on specific criteria, and sort the information for better analysis.
 
@@ -38,7 +42,7 @@ Prerequisites
 Node.js and npm installed on your machine.
 Free API key from Financial Modeling Prep.
 
-Setup Instructions
+Setup Instructions to run locally
 Clone the repository:
 
 Navigate to the project directory:
