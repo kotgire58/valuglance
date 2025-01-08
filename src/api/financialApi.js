@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_KEY = 'pLPywB6N66RixXehBZ15CZlNzYKyqP2L'; // Replace with your actual API key
+const API_KEY = process.env.REACT_APP_API_KEY; // Replace with your actual API key
 const API_URL = `https://financialmodelingprep.com/api/v3/income-statement/AAPL?period=annual&apikey=${API_KEY}`;
 
 export const fetchFinancialData = async () => {
